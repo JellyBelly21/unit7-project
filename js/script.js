@@ -119,9 +119,15 @@ function validateForm(name, age, email, agreed) {
 // }
 //
 // Write your code here:
+function showProfile(name, age, email, hobby, vibe) {
+   document.getElementById("cardName").textContent = name;
+   document.getElementById("cardAge").textContent = `Age: ${age}`;
+   document.getElementById("cardEmail").textContent = `Email: ${email}`;
+   document.getElementById("cardHobby").textContent = `Hobby: ${hobby}`;
+   document.getElementById("cardVibe").textContent = `Vibe: ${vibe}`;
+   profileCard.classList.remove("hidden");
 
-
-
+};
 
 // =====================================================
 // STEP 4: Listen for the form submit
