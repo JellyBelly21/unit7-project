@@ -84,22 +84,18 @@ let cardVibe = document.getElementById("cardVibe");
 //
 // Write your code here:
 function validateForm(name, age, email, agreed) {
-    if(name === "") {
+    if (name === "") {
         return "Please enter your name.";
-}
-   else if (isNaN(age) || age < 13) {
+    } else if (isNaN(age) || age < 13) {
         return "You must be at least 13.";
-   }
-   else if (!email.includes("@")) {
+    } else if (!email.includes("@")) {
         return "Please enter a valid email.";
-   }
-     else if (!agreed) {
-        return "You must agree to the terms.";    
+    } else if (!agreed) {
+        return "You must agree to the terms.";
+    } else {
+        return ""; // all good
     }
-    else {
-        return "";  // all good
-    }
-};
+}
 
 // =====================================================
 // STEP 3: Write a function to SHOW the profile card
@@ -120,14 +116,13 @@ function validateForm(name, age, email, agreed) {
 //
 // Write your code here:
 function showProfile(name, age, email, hobby, vibe) {
-   document.getElementById("cardName").textContent = name;
-   document.getElementById("cardAge").textContent = `Age: ${age}`;
-   document.getElementById("cardEmail").textContent = `Email: ${email}`;
-   document.getElementById("cardHobby").textContent = `Hobby: ${hobby}`;
-   document.getElementById("cardVibe").textContent = `Vibe: ${vibe}`;
-   profileCard.classList.remove("hidden");
-
-};
+    cardName.textContent = name;
+    cardAge.textContent = `Age: ${age}`;
+    cardEmail.textContent = `Email: ${email}`;
+    cardHobby.textContent = `Hobby: ${hobby}`;
+    cardVibe.textContent = `Vibe: ${vibe}`;
+    profileCard.classList.remove("hidden");
+}
 
 // =====================================================
 // STEP 4: Listen for the form submit
@@ -146,32 +141,54 @@ function showProfile(name, age, email, hobby, vibe) {
 // - Use .checked on the checkbox
 //
 // Write your code here:
+profileForm.addEventListener("submit", function(event) {
+    event.preventDefault();
 
+    let name = nameInput.value.trim();
+    let age = Number(ageInput.value);
+    let email = emailInput.value.trim();
+    let hobby = hobbyInput.value.trim();
+    let vibe = vibeSelect.value;
+    let agreed = termsCheck.checked;
 
+    let error = validateForm(name, age, email, agreed);
+
+    if (error) {
+        message.textContent = error;
+        message.style.color = "red";
+    } else {
+        message.textContent = `Welcome, ${name}!`;
+        message.style.color = "green";
+        showProfile(name, age, email, hobby, vibe);
+    }
+});
 
 
 // =====================================================
-// STEP 5: Add a SECOND event listener
-// =====================================================
-// The rubric requires at least 2 event listeners. Pick one:
-//
 // OPTION A: Live preview as the user types their name
-// nameInput.addEventListener("input", function() {
-//   // update something live, like cardName
-// });
-//
-// OPTION B: Reset the message when user starts typing
-// nameInput.addEventListener("input", function() {
-//   message.textContent = "";
-//   message.classList.remove("error", "success");
-// });
-//
+nameInput.addEventListener("input", function() {
+    cardName.textContent = nameInput.value;
+});
+
 // OPTION C: Update card vibe in real time when select changes
-// vibeSelect.addEventListener("change", function() {
-//   // update card vibe
-// });
-//
-// Pick one and write your code here:
+vibeSelect.addEventListener("change", function() {
+    cardVibe.textContent = `Vibe: ${vibeSelect.value}`;
+
+    // BONUS 4: Vibe-driven styling
+    if (vibeSelect.value === "chill") {
+        profileCard.style.background = "linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)";
+        profileCard.style.borderColor = "#0ea5e9";
+    } else if (vibeSelect.value === "creative") {
+        profileCard.style.background = "linear-gradient(135deg, #fdf4ff 0%, #f5d0fe 100%)";
+        profileCard.style.borderColor = "#d946ef";
+    } else if (vibeSelect.value === "curious") {
+        profileCard.style.background = "linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)";
+        profileCard.style.borderColor = "#10b981";
+    } else if (vibeSelect.value === "adventurous") {
+        profileCard.style.background = "linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)";
+        profileCard.style.borderColor = "#f97316";
+    }
+});
 
 
 
