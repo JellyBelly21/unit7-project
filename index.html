@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile Generator - Final Project</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>🎨 Profile Generator</h1>
+    <p class="subtitle">Fill out the form, click Submit, and create your custom profile card!</p>
+
+    <form id="profileForm">
+      <label for="nameInput">Name <span class="required">*</span></label>
+      <input type="text" id="nameInput" placeholder="Enter your name" />
+
+      <label for="ageInput">Age <span class="required">*</span></label>
+      <input type="number" id="ageInput" placeholder="Must be 13+" />
+
+      <label for="emailInput">Email <span class="required">*</span></label>
+      <input type="email" id="emailInput" placeholder="you@example.com" />
+
+      <label for="hobbyInput">Favorite hobby</label>
+      <input type="text" id="hobbyInput" placeholder="e.g., gaming, reading" />
+
+      <label for="vibeSelect">Vibe</label>
+      <select id="vibeSelect">
+        <option value="chill">😎 Chill</option>
+        <option value="creative">🎨 Creative</option>
+        <option value="curious">🔍 Curious</option>
+        <option value="adventurous">🗺️ Adventurous</option>
+      </select>
+
+      <label class="checkbox-label">
+        <input type="checkbox" id="termsCheck" />
+        <span>I agree to the terms <span class="required">*</span></span>
+      </label>
+
+      <button type="submit">Create Profile</button>
+    </form>
+
+    <p id="message" class="message"></p>
+
+    <div class="card hidden" id="profileCard">
+      <h2 id="cardName"></h2>
+      <p id="cardAge"></p>
+      <p id="cardEmail"></p>
+      <p id="cardHobby"></p>
+      <p id="cardVibe"></p>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

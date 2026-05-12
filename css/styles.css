@@ -1,0 +1,150 @@
+/* ==========================================
+   Profile Generator Styles
+   This is done for you! Don't touch this file.
+   ========================================== */
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);
+  padding: 40px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: white;
+  padding: 36px;
+  border-radius: 16px;
+  max-width: 540px;
+  margin: 40px auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  color: #c2410c;
+  margin-top: 0;
+  text-align: center;
+  font-size: 28px;
+}
+
+.subtitle {
+  color: #888;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 28px;
+  font-size: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-weight: bold;
+  color: #4b5563;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.required {
+  color: #dc2626;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select {
+  padding: 10px 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+  margin-bottom: 4px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #f97316;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  margin: 0;
+  width: auto;
+}
+
+button {
+  padding: 14px;
+  background: #f97316;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-top: 16px;
+}
+
+button:hover {
+  background: #c2410c;
+}
+
+.message {
+  text-align: center;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 12px;
+  border-radius: 8px;
+  min-height: 20px;
+}
+
+.message.error {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 2px solid #f87171;
+}
+
+.message.success {
+  background: #dcfce7;
+  color: #15803d;
+  border: 2px solid #86efac;
+}
+
+.card {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  padding: 28px;
+  border-radius: 12px;
+  border: 2px dashed #f97316;
+  text-align: center;
+  margin-top: 24px;
+  transition: all 0.3s ease;
+}
+
+.card.hidden {
+  display: none;
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #c2410c;
+  font-size: 26px;
+}
+
+.card p {
+  color: #4b5563;
+  font-size: 16px;
+  margin: 8px 0;
+}
