@@ -64,7 +64,6 @@ let cardEmail = document.getElementById("cardEmail");
 let cardHobby = document.getElementById("cardHobby");
 let cardVibe = document.getElementById("cardVibe");   
 
-
 // =====================================================
 // STEP 2: Write a validation FUNCTION
 // =====================================================
@@ -84,9 +83,23 @@ let cardVibe = document.getElementById("cardVibe");
 // }
 //
 // Write your code here:
-
-
-
+function validateForm(name, age, email, agreed) {
+    if(name === "") {
+        return "Please enter your name.";
+}
+   else if (isNaN(age) || age < 13) {
+        return "You must be at least 13.";
+   }
+   else if (!email.includes("@")) {
+        return "Please enter a valid email.";
+   }
+     else if (!agreed) {
+        return "You must agree to the terms.";    
+    }
+    else {
+        return "";  // all good
+    }
+};
 
 // =====================================================
 // STEP 3: Write a function to SHOW the profile card
