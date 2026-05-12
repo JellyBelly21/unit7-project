@@ -49,8 +49,20 @@
 // - profileCard, cardName, cardAge, cardEmail, cardHobby, cardVibe
 //
 // Write your code here:
-
-
+let profileForm = document.getElementById("profileForm");
+let nameInput = document.getElementById("nameInput");
+let ageInput = document.getElementById("ageInput");
+let emailInput = document.getElementById("emailInput");
+let hobbyInput = document.getElementById("hobbyInput");
+let vibeSelect = document.getElementById("vibeSelect");
+let termsCheck = document.getElementById("termsCheck");
+let message = document.getElementById("message");
+let profileCard = document.getElementById("profileCard");
+let cardName = document.getElementById("cardName");
+let cardAge = document.getElementById("cardAge");
+let cardEmail = document.getElementById("cardEmail");
+let cardHobby = document.getElementById("cardHobby");
+let cardVibe = document.getElementById("cardVibe");   
 
 
 // =====================================================
